@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HABARI — Business Plan 2026–2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0D0D0D;
+    --forest: #2C6B5A;
+    --gold: #C9A44A;
+    --cream: #F5F0E4;
+    --warm-gray: #8A8378;
+    --light-forest: #3D8A72;
+    --dark-gold: #A07B2E;
+    --off-white: #FAF7F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--off-white);
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(44,107,90,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(201,164,74,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cover-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(72px, 15vw, 120px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+  }
+
+  .cover-subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(14px, 3vw, 20px);
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 48px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+
+  .cover-meta-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--cream);
+  }
+
+  .cover-flag-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 48px;
+    justify-content: center;
+  }
+
+  .flag-badge {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .flag-connector {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    padding: 80px 0 0;
+  }
+
+  .section-number {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .section-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--forest);
+    margin-bottom: 32px;
+  }
+
+  /* CALLOUT BOX */
+  .callout {
+    background: var(--black);
+    color: var(--cream);
+    padding: 32px 36px;
+    margin: 32px 0;
+    position: relative;
+    border-left: 4px solid var(--gold);
+  }
+
+  .callout-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .callout p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--cream);
+  }
+
+  /* TWO COLUMN */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .col-card {
+    background: white;
+    padding: 28px;
+    border-top: 3px solid var(--forest);
+  }
+
+  .col-card.gold-top { border-top-color: var(--gold); }
+  .col-card.black-top { border-top-color: var(--black); }
+
+  .col-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--black);
+  }
+
+  .col-card p, .col-card li {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .col-card ul { padding-left: 16px; }
+
+  /* STEP BLOCKS */
+  .step-block {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+    padding: 24px;
+    background: white;
+    border-left: 3px solid var(--forest);
+    align-items: flex-start;
+  }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--forest);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 56px;
+  }
+
+  .step-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .step-content p, .step-content li {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+
+  .step-content ul { padding-left: 16px; }
+
+  /* PHASE TIMELINE */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 32px 0;
+    border: 1px solid #E0DAD0;
+  }
+
+  @media (max-width: 600px) {
+    .phase-grid { grid-template-columns: 1fr; }
+  }
+
+  .phase-item {
+    padding: 28px;
+    border-right: 1px solid #E0DAD0;
+    position: relative;
+  }
+
+  .phase-item:last-child { border-right: none; }
+
+  .phase-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+
+  .phase-badge.p1 { background: var(--forest); color: white; }
+  .phase-badge.p2 { background: var(--gold); color: var(--black); }
+  .phase-badge.p3 { background: var(--black); color: var(--cream); }
+
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--black);
+  }
+
+  .phase-duration {
+    font-size: 11px;
+    color: var(--warm-gray);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .phase-item ul {
+    padding-left: 14px;
+  }
+
+  .phase-item li {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+
+  /* MONEY TABLE */
+  .money-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13px;
+  }
+
+  .money-table th {
+    background: var(--black);
+    color: var(--cream);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .money-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #E0DAD0;
+    vertical-align: top;
+  }
+
+  .money-table tr:nth-child(even) td { background: #F8F4EC; }
+
+  .money-table tr:last-child td {
+    background: var(--forest);
+    color: white;
+    font-weight: 700;
+  }
+
+  .amount { font-family: 'Playfair Display', serif; font-weight: 700; }
+  .amount.gold { color: var(--gold); }
+  .amount.forest { color: var(--forest); }
+
+  /* AUDIENCE CARD */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .audience-card {
+    padding: 24px;
+    background: var(--cream);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .audience-age {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .audience-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 12px;
+  }
+
+  .audience-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* PSYCHOLOGY SECTION */
+  .psych-card {
+    background: var(--black);
+    color: var(--cream);
+    padding: 24px 28px;
+    margin: 12px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .psych-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .psych-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .psych-body {
+    font-size: 12px;
+    color: #CCC;
+    line-height: 1.6;
+  }
+
+  /* REVENUE FUNNEL */
+  .funnel {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .funnel-layer {
+    padding: 20px 28px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .funnel-layer.f1 { background: var(--black); color: var(--cream); }
+  .funnel-layer.f2 { background: #1A1A1A; color: var(--cream); }
+  .funnel-layer.f3 { background: var(--forest); color: white; }
+  .funnel-layer.f4 { background: var(--light-forest); color: white; }
+  .funnel-layer.f5 { background: var(--gold); color: var(--black); }
+  .funnel-layer.f6 { background: var(--dark-gold); color: white; }
+
+  .funnel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .funnel-desc {
+    font-size: 11px;
+    opacity: 0.8;
+    max-width: 400px;
+  }
+
+  .funnel-revenue {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* BRAND SECTION */
+  .brand-palette {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .palette-swatch {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+  }
+
+  .palette-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  /* ROLES TABLE */
+  .roles-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+  }
+
+  .roles-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--cream);
+    color: var(--warm-gray);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .roles-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #E8E3D8;
+    font-size: 13px;
+    vertical-align: top;
+  }
+
+  .roles-table tr:hover td { background: #F8F4EC; }
+
+  .who-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .who-badge.nairobi { background: var(--forest); color: white; }
+  .who-badge.norway { background: var(--gold); color: var(--black); }
+  .who-badge.both { background: var(--black); color: white; }
+
+  /* PRINT SPEC */
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 600px) {
+    .spec-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .spec-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border: 1px solid #E0DAD0;
+  }
+
+  .spec-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--forest);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    background: var(--black);
+    color: var(--warm-gray);
+    text-align: center;
+    padding: 48px 24px;
+    margin-top: 80px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .doc-footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .doc-footer p {
+    color: #666;
+    font-size: 11px;
+  }
+
+  /* UTILITY */
+  p { margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  .lead {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 24px;
+  }
+
+  .gold-text { color: var(--gold); }
+  .forest-text { color: var(--forest); }
+
+  hr.section-break {
+    border: none;
+    border-top: 1px solid #E0DAD0;
+    margin: 60px 0 0;
+  }
+
+  .inline-flag { font-size: 18px; vertical-align: middle; }
+
+  .highlight-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--forest);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .mini-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+
+  .stat-block {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .tick { color: var(--forest); font-weight: 700; }
+  .cross { color: #CC4444; }
+
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 12px 20px;
+    margin: 20px 0;
+    background: #F8F4EC;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Confidential Business Plan · 2025–2027</div>
+  <div class="cover-title">HABARI</div>
+  <div class="cover-subtitle">The Swahili Newspaper That Bridges Two Worlds</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Founded By</div>
+      <div class="cover-meta-value">Brenda (Nairobi) & Alan (Norway)</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Headquarters</div>
+      <div class="cover-meta-value">Dual-City · Nairobi + Oslo</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Distribution</div>
+      <div class="cover-meta-value">Print + Digital · East Africa & Diaspora</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Prepared</div>
+      <div class="cover-meta-value">May 2025</div>
+    </div>
+  </div>
+  <div class="cover-flag-row">
+    <div class="flag-badge">🇰🇪</div>
+    <div class="flag-connector"></div>
+    <div class="flag-badge">🗞️</div>
+    <div class="flag-connector"></div>
+    <div class="flag-badge">🇳🇴</div>
+  </div>
+</div>
+
+
+<!-- SECTION 1: THE BIG IDEA -->
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">Section 01</div>
+    <h2 class="section-title">The Big Idea</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">HABARI (Swahili for "news" / "what's happening?") is a bilingual Swahili-English newspaper and digital media brand covering food, culture, tradition, and moral ethics — published simultaneously from Nairobi, Kenya and Oslo, Norway. It is the first Swahili-language publication built specifically to serve the East African diaspora in Scandinavia while keeping the Nairobi heartbeat alive.</p>
+
+  <div class="callout">
+    <div class="callout-label">The Core Insight</div>
+    <p>"Every Kenyan, Tanzanian, Ugandan, or Somali living in Norway wakes up and reads Norwegian news. But their soul still lives in Kiswahili. HABARI gives it somewhere to go."</p>
+  </div>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>🇰🇪 Nairobi HQ — Brenda</h4>
+      <ul>
+        <li>Content origination & editorial lead</li>
+        <li>Food, lifestyle & culture coverage</li>
+        <li>Local brand partnerships & ad sales</li>
+        <li>Print distribution management</li>
+        <li>Social media & content marketing</li>
+        <li>Design & brand direction</li>
+      </ul>
+    </div>
+    <div class="col-card gold-top">
+      <h4>🇳🇴 Oslo HQ — Alan</h4>
+      <ul>
+        <li>Norway-side editorial & community beat</li>
+        <li>Diaspora audience development</li>
+        <li>Norwegian advertiser outreach</li>
+        <li>Print distribution in Oslo/Bergen</li>
+        <li>Events & cultural partnerships</li>
+        <li>VIPPS & NOK payment handling</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="background: var(--forest);">
+    <div class="callout-label" style="color: var(--gold);">Why This Works</div>
+    <p>Norway has over 27,000 Somali immigrants, 11,500 Ethiopians, and a growing East African community — all speaking Swahili as a shared cultural glue. Zero publications currently serve them in their mother tongue. That is a white space. You move first, you own it.</p>
+  </div>
+</div>
+
+
+<!-- SECTION 2: MARKET -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 02</div>
+    <h2 class="section-title">The Market Opportunity</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">You are targeting two very different but perfectly complementary markets — one in Nairobi, one in Norway. Together they create a loop: content made in Nairobi is relevant to Oslo. Stories from Oslo inspire Nairobians. This is the flywheel.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>🇰🇪 Nairobi Market</h4>
+      <p><strong>Population:</strong> ~5.5M in Nairobi alone</p>
+      <p><strong>Swahili speakers:</strong> Near 100% literacy in Kiswahili</p>
+      <p><strong>Growing middle class:</strong> Urban Kenyans aged 25–45 spending on culture, food, events</p>
+      <p><strong>Print market:</strong> Still strong in Kenya — Daily Nation, The Standard, People Daily print daily</p>
+      <p><strong>Gap:</strong> No publication combining food + culture + diaspora perspective in a premium format</p>
+    </div>
+    <div class="col-card gold-top">
+      <h4>🇳🇴 Norway Market</h4>
+      <p><strong>Total Africans in Norway:</strong> 131,700+</p>
+      <p><strong>East African speakers (Swahili corridor):</strong> ~50,000+ (Somali, Kenyan, Ethiopian, Ugandan, Tanzanian)</p>
+      <p><strong>Purchasing power:</strong> Norwegian average salary ~NOK 50,000/month = HIGH consumer spend</p>
+      <p><strong>Cultural hunger:</strong> First and second-generation Africans actively seek cultural connection</p>
+      <p><strong>Gap:</strong> Zero Swahili-language publication exists in Norway</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Target Audience by Age Psychology</h3>
+
+  <div class="audience-grid">
+    <div class="audience-card">
+      <div class="audience-age">18–24</div>
+      <div class="audience-label">The Identity Seekers</div>
+      <div class="audience-desc">Born or raised partly abroad. Searching for cultural identity. They don't speak perfect Swahili but they're proud of it. They want <strong>cool African content</strong>, not old-style news. Hook them with food, music, style.</div>
+    </div>
+    <div class="audience-card">
+      <div class="audience-age">25–34</div>
+      <div class="audience-label">The Builders</div>
+      <div class="audience-desc">Your core. Starting careers, businesses, families. They want practical content — how African culture applies to their real life in Norway or Nairobi. They share content. They subscribe. They buy ads. <strong>This is your bread and butter.</strong></div>
+    </div>
+    <div class="audience-card">
+      <div class="audience-age">35–50</div>
+      <div class="audience-label">The Nostalgic Providers</div>
+      <div class="audience-desc">Established. Homesick. Reading news from home while sitting in Oslo. They buy print copies, read heritage recipes, want moral and ethical discourse. <strong>They pay the highest subscription rates without blinking.</strong></div>
+    </div>
+    <div class="audience-card">
+      <div class="audience-age">50–65+</div>
+      <div class="audience-label">The Elders</div>
+      <div class="audience-desc">Community anchors. They don't use apps but they pick up print copies at community centers, churches, mosques. They recommend HABARI to everyone they know. <strong>Word of mouth machines.</strong></div>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Marketing Psychology Triggers</h3>
+  <p style="margin-bottom: 16px;">A billionaire doesn't market features — they market feelings. Here is the emotional architecture of HABARI's marketing:</p>
+
+  <div class="psych-card">
+    <div class="psych-icon">🏠</div>
+    <div>
+      <div class="psych-title">Belonging & Identity</div>
+      <div class="psych-body">People don't buy newspapers. They buy mirrors. HABARI should make every reader feel seen — "this was written by someone who knows what ugali smells like, who knows what it's like to explain your food at work in Oslo." Identity sells itself.</div>
+    </div>
+  </div>
+  <div class="psych-card">
+    <div class="psych-icon">🌍</div>
+    <div>
+      <div class="psych-title">Pride & Status</div>
+      <div class="psych-body">Being a HABARI reader should feel like a badge. "I keep up with my culture." Make it beautiful enough that people want to be seen with the print copy. Design matters enormously here — it signals that African media can be premium.</div>
+    </div>
+  </div>
+  <div class="psych-card">
+    <div class="psych-icon">🔗</div>
+    <div>
+      <div class="psych-title">Continuity & Nostalgia</div>
+      <div class="psych-body">Particularly for the 35+ diaspora: the smell of mandazi, a mama's recipe, the Mombasa coast in July. HABARI is not news — it's home delivered to a cold Oslo apartment. That emotional positioning justifies subscription pricing.</div>
+    </div>
+  </div>
+  <div class="psych-card">
+    <div class="psych-icon">💬</div>
+    <div>
+      <div class="psych-title">Community & Conversation</div>
+      <div class="psych-body">Give readers something to discuss at church, at the barber, at the community hall. HABARI should spark debate. Moral ethics pieces, cultural debates, food controversies — content designed to be talked about rather than just read.</div>
+    </div>
+  </div>
+  <div class="psych-card">
+    <div class="psych-icon">📈</div>
+    <div>
+      <div class="psych-title">FOMO & Exclusivity</div>
+      <div class="psych-body">Limited print runs. "Only 500 copies printed this month." Numbered editions. Collector appeal. Print scarcity drives digital subscriptions — people who missed the print want access. This is the Apple playbook applied to community media.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 3: CONTENT -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 03</div>
+    <h2 class="section-title">Content Strategy & Editorial Plan</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">HABARI is not a general news outlet. It is a <em>cultural publication</em> built around four pillars. Every issue, every article, every social post maps back to one of these pillars.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>🍲 CHAKULA — Food</h4>
+      <ul>
+        <li>Traditional recipes + modern adaptation</li>
+        <li>Restaurant spotlights: Nairobi & Oslo</li>
+        <li>"Cook Like Mama" recipe series</li>
+        <li>Food for the diaspora: Swahili dishes with Norwegian ingredients</li>
+        <li>Seasonal food calendars (Ramadan edition, Christmas edition)</li>
+      </ul>
+    </div>
+    <div class="col-card gold-top">
+      <h4>🎭 UTAMADUNI — Culture & Tradition</h4>
+      <ul>
+        <li>Heritage stories: tribe traditions explained</li>
+        <li>Music & arts features</li>
+        <li>Fashion & textile spotlights</li>
+        <li>Language corner (teach Kiswahili to diaspora kids)</li>
+        <li>Profiles of East Africans excelling in Norway</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>🤝 MAADILI — Moral Ethics</h4>
+      <ul>
+        <li>Opinion & debate columns</li>
+        <li>Parenting across cultures</li>
+        <li>Faith & community</li>
+        <li>Money & responsibility in diaspora</li>
+        <li>Letters to the editor</li>
+      </ul>
+    </div>
+    <div class="col-card black-top">
+      <h4>🌐 DUNIA MBILI — Two Worlds</h4>
+      <ul>
+        <li>Life in Norway vs Kenya comparisons</li>
+        <li>Immigration advice & legal basics</li>
+        <li>Business opportunities connecting both markets</li>
+        <li>Remittances & family finance</li>
+        <li>Success stories: diaspora investing back home</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Publication Schedule</h3>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <span class="spec-value">Monthly</span>
+      <span class="spec-label">Print Edition</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-value">Weekly</span>
+      <span class="spec-label">Digital Newsletter</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-value">Daily</span>
+      <span class="spec-label">Social Media Posts</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-value">16–24</span>
+      <span class="spec-label">Pages Per Issue (Print)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-value">A3</span>
+      <span class="spec-label">Print Format (Tabloid)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-value">Bilingual</span>
+      <span class="spec-label">Swahili + English</span>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Print Logistics</h3>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>🇰🇪 Nairobi Printing</h4>
+      <ul>
+        <li><strong>Printer:</strong> Start with a local press in Industrial Area — cost KES 18–30/copy for 500+ runs</li>
+        <li><strong>500 copies/month</strong> to start, scale to 2,000+</li>
+        <li><strong>Distribution:</strong> Nairobi CBD, Westlands, Kilimani, Kasarani community centres, churches, mosques, cafés</li>
+        <li><strong>Cost estimate:</strong> ~KES 15,000–20,000/month for 500 copies (design + print)</li>
+        <li><strong>Sale price:</strong> KES 150–200/copy</li>
+      </ul>
+    </div>
+    <div class="col-card gold-top">
+      <h4>🇳🇴 Norway Printing</h4>
+      <ul>
+        <li><strong>Printer:</strong> Flyerzone.no, Grafisk.no, or Onlineprinters.no — professional tabloid print</li>
+        <li><strong>200–300 copies/month</strong> to start (Norway is expensive — go smaller, go premium)</li>
+        <li><strong>Distribution:</strong> Oslo's Grønland district, African community centres, halal shops, Ethiopian/Somali restaurants, Kenyan church gatherings</li>
+        <li><strong>Cost estimate:</strong> ~NOK 8,000–12,000/month for 300 copies</li>
+        <li><strong>Sale price:</strong> NOK 50–80/copy</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 4: BRAND IDENTITY -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 04</div>
+    <h2 class="section-title">Brand Identity</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">HABARI should feel like The Guardian meets a high-end Nairobi magazine — trusted, beautiful, unmistakably African, globally credible. This brand works in both contexts: dignified enough for Oslo, warm enough for Nairobi.</p>
+
+  <div class="brand-palette">
+    <div class="palette-swatch" style="background: #0D0D0D; flex: 1.2;">
+      <span class="palette-label" style="color: #555; font-size: 8px;">INK BLACK #0D0D0D</span>
+    </div>
+    <div class="palette-swatch" style="background: #2C6B5A;">
+      <span class="palette-label" style="color: rgba(255,255,255,0.6); font-size: 8px;">FOREST #2C6B5A</span>
+    </div>
+    <div class="palette-swatch" style="background: #C9A44A;">
+      <span class="palette-label" style="color: rgba(0,0,0,0.6); font-size: 8px;">GOLD #C9A44A</span>
+    </div>
+    <div class="palette-swatch" style="background: #F5F0E4; flex: 1.2;">
+      <span class="palette-label" style="color: #999; font-size: 8px;">NEWSPRINT #F5F0E4</span>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Typography</h4>
+      <ul>
+        <li><strong>Masthead:</strong> Playfair Display Black — gravitas, editorial authority</li>
+        <li><strong>Headlines:</strong> Playfair Display Bold — classic newspaper feel</li>
+        <li><strong>Body:</strong> Libre Baskerville — readable, warm, traditional</li>
+        <li><strong>Labels/Captions:</strong> Montserrat — clean, modern contrast</li>
+      </ul>
+    </div>
+    <div class="col-card gold-top">
+      <h4>Visual Language</h4>
+      <ul>
+        <li>Strong photography: real people, real food, real life</li>
+        <li>Bold column layouts — classic broadsheet grid</li>
+        <li>Gold accent rules and section dividers</li>
+        <li>No stock images of generic "Africa" — only authentic imagery</li>
+        <li>Each issue gets a unique cover illustration (optional)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Name: HABARI</h4>
+      <p>In Swahili, "habari" is the most common greeting — "What's the news? What's happening?" It's the word Swahili speakers use dozens of times a day. Owning this word means owning the cultural check-in. It's familiar, immediate, warm.</p>
+    </div>
+    <div class="col-card black-top">
+      <h4>Tagline Options</h4>
+      <ul>
+        <li><em>"Habari za Nyumbani"</em> — News from Home</li>
+        <li><em>"Dunia Mbili, Hadithi Moja"</em> — Two Worlds, One Story</li>
+        <li><em>"Chakula. Utamaduni. Ukweli."</em> — Food. Culture. Truth.</li>
+        <li>→ Recommend: <strong>"Dunia Mbili, Hadithi Moja"</strong> — speaks directly to the diaspora experience</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Design Execution (Brenda's role)</div>
+    <p>Use Canva Pro for layout. Master pages for consistent print templates. Use print-ready PDF export at 300dpi. Each issue takes ~5–7 days to design. As the business grows, you hire a layout designer so you can focus on direction and client work.</p>
+  </div>
+</div>
+
+
+<!-- SECTION 5: MONETIZATION FUNNEL -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 05</div>
+    <h2 class="section-title">The Monetization Funnel</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">Think like a billionaire: you don't have one product. You have a funnel. HABARI has 6 revenue layers. Layer 1 attracts. Layer 6 is where serious money lives. Build them in order — don't skip ahead.</p>
+
+  <div class="funnel">
+    <div class="funnel-layer f1">
+      <div>
+        <div class="funnel-name">Layer 1 — Free Social Content</div>
+        <div class="funnel-desc">Instagram, TikTok, YouTube Shorts. Builds audience. Zero revenue but drives everything else.</div>
+      </div>
+      <div class="funnel-revenue">FREE → Audience</div>
+    </div>
+    <div class="funnel-layer f2">
+      <div>
+        <div class="funnel-name">Layer 2 — Digital Subscription (PDF/App)</div>
+        <div class="funnel-desc">Monthly digital edition. KES 500/month or NOK 49/month. Substack, Selar, or Gumroad.</div>
+      </div>
+      <div class="funnel-revenue">KES 500 / NOK 49/mo</div>
+    </div>
+    <div class="funnel-layer f3">
+      <div>
+        <div class="funnel-name">Layer 3 — Print Sales</div>
+        <div class="funnel-desc">Physical copies. Nairobi @ KES 150. Oslo @ NOK 65. Kiosks, community points, direct mail.</div>
+      </div>
+      <div class="funnel-revenue">KES 150–200 / NOK 50–80</div>
+    </div>
+    <div class="funnel-layer f4">
+      <div>
+        <div class="funnel-name">Layer 4 — Advertising</div>
+        <div class="funnel-desc">Local businesses in both cities pay for full page, half page, classifieds. Norwegian businesses wanting to reach Africans pay premium (NOK market = 10x Nairobi rates).</div>
+      </div>
+      <div class="funnel-revenue">KES 5K–25K / NOK 2K–8K per ad</div>
+    </div>
+    <div class="funnel-layer f5">
+      <div>
+        <div class="funnel-name">Layer 5 — Events</div>
+        <div class="funnel-desc">HABARI Cultural Nights. Food festivals. "Taste of East Africa" in Oslo. Ticket sales, sponsorships, merchandise. Quarterly.</div>
+      </div>
+      <div class="funnel-revenue">KES 200K–500K / event</div>
+    </div>
+    <div class="funnel-layer f6">
+      <div>
+        <div class="funnel-name">Layer 6 — Brand Partnerships & Grants</div>
+        <div class="funnel-desc">Norwegian government cultural grants (Kulturrådet). African/diaspora NGOs. Brand partnerships (Safaricom, Norwegian airline routes to Nairobi, remittance companies like Sendwave).</div>
+      </div>
+      <div class="funnel-revenue">NOK 50K–500K / grant</div>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Revenue Projections</h3>
+  <p style="margin-bottom: 16px; color: #666; font-size: 12px;">Conservative estimates. Nairobi in KES, Norway in NOK. Based on Month 6 onwards (past startup phase).</p>
+
+  <table class="money-table">
+    <thead>
+      <tr>
+        <th>Revenue Stream</th>
+        <th>Channel</th>
+        <th>Monthly Est. (KES)</th>
+        <th>Monthly Est. (NOK)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Print sales – Nairobi (300 copies × KES 150)</td>
+        <td>🇰🇪</td>
+        <td class="amount">45,000</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Print sales – Oslo (200 copies × NOK 65)</td>
+        <td>🇳🇴</td>
+        <td>—</td>
+        <td class="amount">13,000</td>
+      </tr>
+      <tr>
+        <td>Digital subscriptions (100 × KES 500)</td>
+        <td>🌐</td>
+        <td class="amount">50,000</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Digital subscriptions (50 × NOK 49)</td>
+        <td>🌐</td>
+        <td>—</td>
+        <td class="amount">2,450</td>
+      </tr>
+      <tr>
+        <td>Nairobi local ads (3 ads × KES 10,000)</td>
+        <td>🇰🇪</td>
+        <td class="amount">30,000</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Oslo ads (2 ads × NOK 4,000)</td>
+        <td>🇳🇴</td>
+        <td>—</td>
+        <td class="amount">8,000</td>
+      </tr>
+      <tr>
+        <td>Sponsored content / brand features</td>
+        <td>🌐</td>
+        <td class="amount">25,000</td>
+        <td class="amount">5,000</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL — Conservative Month 6</strong></td>
+        <td></td>
+        <td class="amount">~150,000</td>
+        <td class="amount">~28,450 (≈ KES 340K)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>At Month 6, combined revenue target: ~KES 490,000/month (~$3,800 USD). At Month 18 with events added: KES 1M+ per month is realistic. The Norway side alone, once grant funding is secured, can exceed the Nairobi side in raw KES value.</blockquote>
+</div>
+
+
+<!-- SECTION 6: ROLES & RESPONSIBILITIES -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 06</div>
+    <h2 class="section-title">Who Does What</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">Clarity between co-founders is how media companies survive. Here is every key function mapped to a person — no overlap, no dropped balls.</p>
+
+  <table class="roles-table">
+    <thead>
+      <tr>
+        <th>Function</th>
+        <th>Owner</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Editorial Direction</strong></td>
+        <td><span class="who-badge both">Both</span></td>
+        <td>Monthly editorial call to plan the next issue. Brenda leads culture/food/brand. Alan leads diaspora/ethics/Norway news.</td>
+      </tr>
+      <tr>
+        <td><strong>Layout & Design</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda owns all design — Canva Pro, print-ready PDFs, social graphics, digital edition formatting.</td>
+      </tr>
+      <tr>
+        <td><strong>Nairobi Content Writing</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda + 1–2 contributing writers (paid per piece, KES 2,000–5,000/article to start)</td>
+      </tr>
+      <tr>
+        <td><strong>Norway Content Writing</strong></td>
+        <td><span class="who-badge norway">Norway</span></td>
+        <td>Alan + community contributors. Recruit from East African student associations in Oslo, Bergen universities.</td>
+      </tr>
+      <tr>
+        <td><strong>Nairobi Sales & Ads</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda pitches local Nairobi businesses. Restaurants, beauty brands, real estate agents, travel companies.</td>
+      </tr>
+      <tr>
+        <td><strong>Norway Sales & Ads</strong></td>
+        <td><span class="who-badge norway">Norway</span></td>
+        <td>Alan pitches Norwegian businesses wanting the African market. Airlines, remittance apps, food brands, government bodies.</td>
+      </tr>
+      <tr>
+        <td><strong>Nairobi Print Logistics</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda manages printer relationship, distribution drops, kiosk partnerships.</td>
+      </tr>
+      <tr>
+        <td><strong>Norway Print Logistics</strong></td>
+        <td><span class="who-badge norway">Norway</span></td>
+        <td>Alan coordinates with Norwegian printer, distributes to Grønland community spots, churches, restaurants.</td>
+      </tr>
+      <tr>
+        <td><strong>Social Media</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda leads all social — Instagram, TikTok, YouTube. Uses existing @socialbybrenda and @designbyb audience to seed HABARI launch.</td>
+      </tr>
+      <tr>
+        <td><strong>Digital Platform</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda builds HABARI website (Canva site or WordPress), newsletter on Substack/Mailchimp, Selar for paid digital editions.</td>
+      </tr>
+      <tr>
+        <td><strong>Events — Nairobi</strong></td>
+        <td><span class="who-badge nairobi">Nairobi</span></td>
+        <td>Brenda produces HABARI cultural events in Nairobi from Month 9 onwards.</td>
+      </tr>
+      <tr>
+        <td><strong>Events — Norway</strong></td>
+        <td><span class="who-badge norway">Norway</span></td>
+        <td>Alan runs Oslo events — food nights, cultural evenings, connecting diaspora community.</td>
+      </tr>
+      <tr>
+        <td><strong>Finance / Splits</strong></td>
+        <td><span class="who-badge both">Both</span></td>
+        <td>Each city handles its own costs and revenue. Net profit shared 50/50. Monthly financial sync via WhatsApp/Google Sheets.</td>
+      </tr>
+      <tr>
+        <td><strong>Grant Applications</strong></td>
+        <td><span class="who-badge norway">Norway</span></td>
+        <td>Alan applies to Kulturrådet (Norwegian Arts Council) and other diaspora cultural grants. Norway funds this type of cross-cultural media regularly.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- SECTION 7: EXECUTION PHASES -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 07</div>
+    <h2 class="section-title">Execution Roadmap</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">Three phases, 18 months. By Month 18, HABARI is a profitable, self-sustaining dual-city media brand with a growing events business and grant income on the Norway side.</p>
+
+  <div class="phase-grid">
+    <div class="phase-item">
+      <span class="phase-badge p1">Phase 1</span>
+      <div class="phase-title">Build the Foundation</div>
+      <div class="phase-duration">Months 1–3</div>
+      <ul>
+        <li>Register HABARI as a business name</li>
+        <li>Secure habari.co.ke domain</li>
+        <li>Design masthead, templates, brand identity</li>
+        <li>Build Canva print master templates</li>
+        <li>Create Issue 01 — launch edition</li>
+        <li>Set up Substack/Selar for digital subscriptions</li>
+        <li>Build social accounts: @habari_paper</li>
+        <li>Recruit 3 founding advertisers (give free ads in Issue 01)</li>
+        <li>Alan identifies Norwegian printer + distribution points</li>
+        <li>LAUNCH Issue 01 with a small event in both cities</li>
+      </ul>
+    </div>
+    <div class="phase-item">
+      <span class="phase-badge p2">Phase 2</span>
+      <div class="phase-title">Build the Audience</div>
+      <div class="phase-duration">Months 4–9</div>
+      <ul>
+        <li>Monthly print cadence locked in</li>
+        <li>Weekly digital newsletter launched</li>
+        <li>Start charging for ads (Issue 03 onwards)</li>
+        <li>Alan submits first Kulturrådet grant application</li>
+        <li>Launch HABARI Podcast (audio interviews)</li>
+        <li>First HABARI cultural event in Oslo</li>
+        <li>First HABARI food event in Nairobi</li>
+        <li>Reach 200+ print subscribers, 500+ digital</li>
+        <li>Start approaching remittance/diaspora brands</li>
+      </ul>
+    </div>
+    <div class="phase-item">
+      <span class="phase-badge p3">Phase 3</span>
+      <div class="phase-title">Scale & Profit</div>
+      <div class="phase-duration">Months 10–18</div>
+      <ul>
+        <li>First grant income (if Kulturrådet succeeds)</li>
+        <li>Increase print run to 1,000 in Nairobi, 500 in Oslo</li>
+        <li>Launch HABARI Annual Gala (premium ticketed event)</li>
+        <li>Hire a freelance sub-editor for content quality</li>
+        <li>Explore Tanzania, Uganda market expansion</li>
+        <li>Launch HABARI digital app (MVP)</li>
+        <li>Pursue partnership with Kenyan media house</li>
+        <li>Revenue target: KES 500K–1M/month combined</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Step-by-Step: The First 12 Weeks</h3>
+
+  <div class="step-block">
+    <div class="step-number">01</div>
+    <div class="step-content">
+      <h4>Week 1–2: Name, Domain, Brand</h4>
+      <ul>
+        <li>Register "HABARI" name (Kenya: register as business name at eCitizen, ~KES 950)</li>
+        <li>Buy habari.co.ke and habari.no domains</li>
+        <li>Brenda designs full brand identity: logo, colours, fonts, masthead</li>
+        <li>Alan opens a Norwegian bank account for HABARI (Vipps-compatible)</li>
+        <li>Create @habaripaper on Instagram, TikTok, X</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">02</div>
+    <div class="step-content">
+      <h4>Week 3–4: Issue 01 Content Plan</h4>
+      <ul>
+        <li>Hold a Zoom editorial planning meeting — plan 8–10 articles for Issue 01</li>
+        <li>Assign articles: 5 Nairobi-side, 3 Norway-side, 2 shared</li>
+        <li>Themes for Issue 01: "KARIBU" (Welcome) — introduce yourselves, the vision, what's coming</li>
+        <li>Brenda writes: launch letter from the editors, food feature, one Nairobi culture piece</li>
+        <li>Alan writes: diaspora story, one Norway East African community profile</li>
+        <li>Shoot photography — real, authentic, warm</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">03</div>
+    <div class="step-content">
+      <h4>Week 5–6: Design & Print Prep</h4>
+      <ul>
+        <li>Brenda lays out Issue 01 in Canva Pro — 16 pages tabloid format</li>
+        <li>Get print quote from 3 printers in Nairobi (aim: KES 25/copy for 500 copies)</li>
+        <li>Alan gets print quote from Flyerzone.no or similar (aim: NOK 35–45/copy for 200 copies)</li>
+        <li>Export print-ready PDF at 300dpi with bleed marks</li>
+        <li>Also export digital edition PDF (lower res, optimised for screens)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">04</div>
+    <div class="step-content">
+      <h4>Week 7–8: Digital Infrastructure</h4>
+      <ul>
+        <li>Set up Substack for weekly newsletter (free to start)</li>
+        <li>List digital edition on Selar (KES 500/month subscription)</li>
+        <li>List Norway digital edition on Gumroad (NOK 49/month)</li>
+        <li>Build simple Canva website: habari.co.ke — about, subscribe, advertise</li>
+        <li>Set up M-Pesa Paybill for Kenyan subscriptions</li>
+        <li>Alan sets up Vipps link for Norwegian payments</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">05</div>
+    <div class="step-content">
+      <h4>Week 9–10: Pre-Launch Marketing</h4>
+      <ul>
+        <li>Brenda posts "something is coming" content on @socialbybrenda — tease the launch</li>
+        <li>Behind the scenes of the design process — very on-brand for Brenda's audience</li>
+        <li>Alan posts in Oslo East African WhatsApp groups, Facebook groups, community networks</li>
+        <li>Lock in 3 founding advertisers (offer Issue 01 free — they pay from Issue 02)</li>
+        <li>Contact Kenyan restaurants and food businesses in Oslo for first ads</li>
+        <li>Send 10 complimentary copies to community leaders, pastors, cultural figures in both cities</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">06</div>
+    <div class="step-content">
+      <h4>Week 11–12: LAUNCH</h4>
+      <ul>
+        <li>Print and distribute Issue 01 in both cities simultaneously</li>
+        <li>Host a small HABARI launch gathering: Nairobi café + Oslo community space (same weekend)</li>
+        <li>Live coverage on both social accounts</li>
+        <li>Press outreach: Nation Media, Standard Media, Kenyan diaspora blogs</li>
+        <li>Announce Issue 02 pre-order immediately to capture momentum</li>
+        <li>Open digital subscription with a launch offer: first month free, then KES 500/month</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 8: FINANCIALS -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 08</div>
+    <h2 class="section-title">Startup Costs & Financial Plan</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">The beautiful thing about this business: the startup costs are low. You don't need offices. You don't need staff. You need design time (Brenda already has that), a printer, and domains. Here's the realistic cost to launch.</p>
+
+  <table class="money-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Who</th>
+        <th>Cost (KES)</th>
+        <th>Cost (NOK)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Business registration (eCitizen Kenya)</td>
+        <td>🇰🇪</td>
+        <td class="amount">950</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Domain: habari.co.ke + hosting (1 year)</td>
+        <td>🇰🇪</td>
+        <td class="amount">3,500</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Domain: habari.no (or habari.media)</td>
+        <td>🇳🇴</td>
+        <td>—</td>
+        <td class="amount">250</td>
+      </tr>
+      <tr>
+        <td>Issue 01 print – Nairobi (500 copies × KES 25)</td>
+        <td>🇰🇪</td>
+        <td class="amount">12,500</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Issue 01 print – Oslo (200 copies × NOK 45)</td>
+        <td>🇳🇴</td>
+        <td>—</td>
+        <td class="amount">9,000</td>
+      </tr>
+      <tr>
+        <td>Design time (Brenda – already equipped)</td>
+        <td>🇰🇪</td>
+        <td class="amount">— (sweat equity)</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Canva Pro (already subscribed)</td>
+        <td>🇰🇪</td>
+        <td class="amount">0</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Photography — Issue 01 (local photographer)</td>
+        <td>🇰🇪</td>
+        <td class="amount">8,000</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Launch event – Nairobi (small, venue + snacks)</td>
+        <td>🇰🇪</td>
+        <td class="amount">15,000</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Launch event – Oslo (community space, often free)</td>
+        <td>🇳🇴</td>
+        <td>—</td>
+        <td class="amount">0–2,000</td>
+      </tr>
+      <tr>
+        <td>Miscellaneous (distribution, transport, comms)</td>
+        <td>Both</td>
+        <td class="amount">5,000</td>
+        <td class="amount">1,000</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL LAUNCH BUDGET</strong></td>
+        <td></td>
+        <td class="amount">~KES 45,000</td>
+        <td class="amount">~NOK 12,250</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>Total launch investment: approximately KES 45,000 from Brenda's side (~$350 USD) and NOK 12,250 from Alan's side (~$1,200 USD). This is extremely lean for a media launch. You can recover these costs within the first 2–3 issues if you sell ads from Issue 02 onwards.</blockquote>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin: 32px 0 16px;">Break-Even Analysis</h3>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>🇰🇪 Nairobi Break-Even</h4>
+      <p><strong>Monthly costs:</strong> ~KES 25,000 (print + distribution + 1 writer)</p>
+      <p><strong>Revenue needed:</strong> KES 25,000</p>
+      <p><strong>Break-even from print alone:</strong> 167 copies × KES 150</p>
+      <p><strong>Break-even from ads alone:</strong> 3 × KES 8,000 ads</p>
+      <p><strong>Timeline:</strong> Break-even by Issue 3 (Month 3)</p>
+    </div>
+    <div class="col-card gold-top">
+      <h4>🇳🇴 Norway Break-Even</h4>
+      <p><strong>Monthly costs:</strong> ~NOK 12,000 (print + distribution)</p>
+      <p><strong>Revenue needed:</strong> NOK 12,000</p>
+      <p><strong>Break-even from print alone:</strong> 185 copies × NOK 65</p>
+      <p><strong>Break-even from 2 ads:</strong> 2 × NOK 6,000</p>
+      <p><strong>Timeline:</strong> Break-even by Issue 2–3 with 2 advertisers</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 9: GRANTS (NORWAY) -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 09</div>
+    <h2 class="section-title">Norwegian Grants: The Hidden Gold Mine</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">Norway's government actively funds cultural media and integration projects. HABARI fits multiple grant categories perfectly. This is money available — you just have to apply. Alan should treat grant applications as a job from Day 1.</p>
+
+  <div class="step-block">
+    <div class="step-number">→</div>
+    <div class="step-content">
+      <h4>Kulturrådet (Norwegian Arts Council)</h4>
+      <p>Norway's primary funder of arts and culture. They fund publications, cultural media, and projects that strengthen cultural identity. A Swahili newspaper for the Norwegian East African diaspora is a near-perfect application. <strong>Grants range from NOK 50,000–500,000+.</strong></p>
+      <p>Apply to: kulturradet.no — look for "Mangfold og inkludering" (Diversity and Inclusion) and "Tidsskrift og kulturtidsskrift" (Journals and Cultural Publications) categories.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">→</div>
+    <div class="step-content">
+      <h4>IMDi — Directorate of Integration and Diversity</h4>
+      <p>Norwegian government body that funds integration initiatives. A bilingual publication helping East Africans integrate while preserving culture is exactly their mandate. Grants of NOK 100,000–1,000,000 possible for multi-year projects.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">→</div>
+    <div class="step-content">
+      <h4>Oslo Kommune (Oslo City Government)</h4>
+      <p>Oslo funds local cultural projects, especially in diverse neighbourhoods like Grønland, Stovner, Groruddalen where East Africans are concentrated. Apply to the culture department directly.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-number">→</div>
+    <div class="step-content">
+      <h4>Fritt Ord (Free Word Foundation)</h4>
+      <p>Norwegian independent foundation funding freedom of expression and media. A cross-continental journalism project fits their mandate. Apply after you have 3 issues as proof of concept.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">The Grant Strategy</div>
+    <p>Apply to all four simultaneously once Issue 03 is out (you need proof of concept). Alan writes the applications — frame HABARI as a cross-cultural bridge, an integration tool, and a model for diaspora media. Norwegian funders love the dual-city angle. This is the NOK 500K+ opportunity that changes the game.</p>
+  </div>
+</div>
+
+
+<!-- SECTION 10: GROWTH VISION -->
+<div class="container">
+  <hr class="section-break">
+  <div class="section-header">
+    <div class="section-number">Section 10</div>
+    <h2 class="section-title">The Long Game: Think Like a Billionaire</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p class="lead">HABARI is not a newspaper. It is a Swahili media company. Year 1 is a newspaper. Year 3 is a media brand. Year 5 is an empire. Here is how the vision scales.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Year 1: The Newspaper</h4>
+      <ul>
+        <li>Monthly print edition in 2 cities</li>
+        <li>Weekly digital newsletter</li>
+        <li>Social media presence across 4 platforms</li>
+        <li>Revenue: KES 500K–800K/month combined</li>
+        <li>Team: 2 founders + 3 contributors</li>
+      </ul>
+    </div>
+    <div class="col-card gold-top">
+      <h4>Year 2: The Media Brand</h4>
+      <ul>
+        <li>Expand to Dar es Salaam & Kampala</li>
+        <li>HABARI Podcast (Top 10 African podcast in Norway)</li>
+        <li>Annual gala event both cities</li>
+        <li>HABARI digital app launched</li>
+        <li>First grant funding received</li>
+        <li>Revenue: KES 2M–3M/month</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>Year 3: The Platform</h4>
+      <ul>
+        <li>HABARI TV — YouTube original shows</li>
+        <li>HABARI Marketplace — East African businesses on one platform</li>
+        <li>HABARI Academy — journalism training for young Africans in diaspora</li>
+        <li>Licensing model: sell HABARI model to Sweden, Denmark, UK</li>
+        <li>Revenue: KES 5M–10M/month</li>
+      </ul>
+    </div>
+    <div class="col-card black-top">
+      <h4>Year 5: The Empire</h4>
+      <ul>
+        <li>HABARI is the CNN of the Swahili-speaking world</li>
+        <li>Physical HABARI cultural centres in Oslo + Nairobi</li>
+        <li>Pan-African franchise model: 10 cities, 10 editors</li>
+        <li>Listed as a B2B media brand, sought by investors</li>
+        <li>Revenue: USD 1M+/month</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="background: var(--forest);">
+    <div class="callout-label" style="color: var(--gold);">Final Word</div>
+    <p>The gap is real. The audience is real. The money is real. You have everything you need: Brenda has the design skills, the brand authority, the audience, and the creative direction. Alan has the Norway side, the community access, and the grant opportunity. The only thing left to do is start. HABARI ndiyo wakati. The news is now.</p>
+  </div>
+</div>
+
+
+<div class="doc-footer">
+  <span class="footer-logo">HABARI</span>
+  <p>Dunia Mbili, Hadithi Moja — Two Worlds, One Story</p>
+  <p style="margin-top: 12px;">Confidential Business Plan · Prepared May 2025 · Brenda Gathoni & Alan D. Njengiel</p>
+  <p style="margin-top: 8px;">habari.co.ke · @habaripaper</p>
+</div>
+
+</body>
+</html>
